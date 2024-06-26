@@ -65,7 +65,6 @@ class MainActivity : ComponentActivity() {
 
 //koltin 2.0
 //advance permission handling
-//improve ui of options screen , landmark , object detection
 //gallery import photos object detction not working
 //login & signUp feature
 //di
