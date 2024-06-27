@@ -63,11 +63,8 @@ class MainActivity : ComponentActivity() {
     ) == PackageManager.PERMISSION_GRANTED
 }
 
-//koltin 2.0
+
 //advance permission handling
-//gallery import photos object detction not working
 //login & signUp feature
-//di
-//splash screen
 //push to github with readme file and video in it
 
