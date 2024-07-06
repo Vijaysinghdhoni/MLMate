@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299927079203",
+    "project_id": "mlmate",
+    "storage_bucket": "mlmate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299927079203:android:ca3f7631dd3bf43c722496",
+        "android_client_info": {
+          "package_name": "com.vsdhoni5034.mlmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHQ7yf5_hBkowrhxwTUJbL3zIx1K5et5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

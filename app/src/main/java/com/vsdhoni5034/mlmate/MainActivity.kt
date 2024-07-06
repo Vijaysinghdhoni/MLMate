@@ -16,7 +16,9 @@ import com.vsdhoni5034.mlmate.presentation.landMarkRecoginzer.LandMarkImageAnaly
 import com.vsdhoni5034.mlmate.presentation.landMarkRecoginzer.LandMarkViewModel
 import com.vsdhoni5034.mlmate.presentation.navigation.Navigation
 import com.vsdhoni5034.mlmate.ui.theme.MLMateTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +66,7 @@ class MainActivity : ComponentActivity() {
 }
 
 
-//advance permission handling
-//login & signUp feature
+
+//logout button add on setting icon
 //push to github with readme file and video in it
 

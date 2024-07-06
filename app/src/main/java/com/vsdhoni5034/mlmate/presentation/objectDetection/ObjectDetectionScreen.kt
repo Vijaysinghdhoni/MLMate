@@ -1,7 +1,5 @@
 package com.vsdhoni5034.mlmate.presentation.objectDetection
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -28,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.vsdhoni5034.mlmate.R
 import com.vsdhoni5034.mlmate.presentation.objectDetection.components.CameraView
 
-@RequiresApi(Build.VERSION_CODES.P)
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ObjectDetectionScreen(
