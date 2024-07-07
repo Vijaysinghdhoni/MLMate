@@ -67,6 +67,6 @@ class MainActivity : ComponentActivity() {
 
 
 
-//logout button add on setting icon
+//setting icon position!
 //push to github with readme file and video in it
 

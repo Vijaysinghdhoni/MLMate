@@ -19,6 +19,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -27,15 +32,32 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.vsdhoni5034.mlmate.R
+import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OptionsScreen(
     modifier: Modifier = Modifier,
     onObjectDetectionCLick: () -> Unit,
-    onLandMarkClick: () -> Unit
+    onLandMarkClick: () -> Unit,
+    optionsViewModel: OptionsViewModel = hiltViewModel(),
+    onNavigation: () -> Unit
 ) {
+
+    var expanded by remember {
+        mutableStateOf(false)
+    }
+
+    LaunchedEffect(true) {
+        optionsViewModel.optionsUiEvent.collectLatest {
+            if (it is OptionsUiEvent.NavigationEvent) {
+                onNavigation()
+            }
+        }
+    }
+
 
     Scaffold(
         topBar = {
@@ -48,7 +70,9 @@ fun OptionsScreen(
                 )
             },
                 actions = {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = {
+                        expanded = !expanded
+                    }) {
                         Icon(imageVector = Icons.Filled.Settings, contentDescription = null)
                     }
                 }
@@ -60,11 +84,22 @@ fun OptionsScreen(
             modifier = modifier
                 .fillMaxSize()
                 .padding(it),
-            contentAlignment = Alignment.Center
         ) {
 
+            DropDownMenu(
+                expanded = expanded,
+                onLogoutClick = {
+                    optionsViewModel.onLogoutClick()
+                },
+                onDismiss = {
+                    expanded = false
+                },
+                modifier = Modifier.align(Alignment.CenterEnd)
+            )
             Column(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.Center),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
@@ -114,7 +149,6 @@ fun OptionsScreen(
 
 
             }
-
 
         }
 

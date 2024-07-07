@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -106,7 +107,9 @@ fun LoginScreen(
 
         Box(
             modifier =
-            Modifier.padding(padding)
+            Modifier
+                .fillMaxSize()
+                .padding(padding)
         ) {
             Column(
                 modifier = Modifier
@@ -198,7 +201,7 @@ fun LoginScreen(
                 CircularProgressIndicator(
                     modifier =
                     Modifier
-                        .align(Alignment.BottomCenter)
+                        .align(Alignment.Center)
                         .width(60.dp)
                         .height(60.dp),
                     trackColor = Color.Black,

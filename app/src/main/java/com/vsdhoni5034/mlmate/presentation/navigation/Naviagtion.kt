@@ -35,8 +35,8 @@ fun Navigation(
 
                 LoadingScreen(
                     onNavigation = { route ->
-                        navController.navigate(route){
-                            popUpTo(Routes.LoadingScreen.route){
+                        navController.navigate(route) {
+                            popUpTo(Routes.LoadingScreen.route) {
                                 inclusive = true
                             }
                         }
@@ -48,14 +48,14 @@ fun Navigation(
             composable(route = Routes.LoginScreen.route) {
                 LoginScreen(onCreateAccountClick = {
                     navController.navigate(Routes.RegisterScreen.route) {
-                        popUpTo(Routes.LoginScreen.route){
+                        popUpTo(Routes.LoginScreen.route) {
                             inclusive = true
                         }
                     }
                 },
                     onSuccessLogin = {
                         navController.navigate(Routes.MlAppNav.route) {
-                            popUpTo(Routes.LoginScreen.route){
+                            popUpTo(Routes.LoginScreen.route) {
                                 inclusive = true
                             }
                         }
@@ -66,14 +66,14 @@ fun Navigation(
             composable(route = Routes.RegisterScreen.route) {
                 RegisterScreen(onLoginClick = {
                     navController.navigate(Routes.LoginScreen.route) {
-                        popUpTo(Routes.RegisterScreen.route){
+                        popUpTo(Routes.RegisterScreen.route) {
                             inclusive = true
                         }
                     }
                 },
                     onRegisterSuccess = {
                         navController.navigate(Routes.LoginScreen.route) {
-                            popUpTo(Routes.RegisterScreen.route){
+                            popUpTo(Routes.RegisterScreen.route) {
                                 inclusive = true
                             }
                         }
@@ -92,6 +92,13 @@ fun Navigation(
                 },
                     onLandMarkClick = {
                         navController.navigate(Routes.LandMarkRecognizerScreen.route)
+                    },
+                    onNavigation = {
+                        navController.navigate(Routes.AuthNav.route) {
+                            popUpTo(Routes.OptionsScreen.route) {
+                                inclusive = true
+                            }
+                        }
                     }
                 )
             }
